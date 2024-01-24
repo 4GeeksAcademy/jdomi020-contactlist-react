@@ -6,12 +6,14 @@ import "../../styles/demo.css";
 
 
 
-export const AddContact = () => {
+export const UpdateContact = () => {
 	const [name, setName] = useState("")
 	const [email, setEmail] = useState("")
 	const [phone, setPhone] = useState("")
 	const [address, setAddress] = useState("")
 	const { store, actions } = useContext(Context);
+
+    
 
 	const handleSubmit = () => {
 		e.preventDefault();

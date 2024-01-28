@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
@@ -12,10 +12,12 @@ export const AddContact = () => {
 	const [phone, setPhone] = useState("")
 	const [address, setAddress] = useState("")
 	const { store, actions } = useContext(Context);
+	let navigate = useNavigate()
 
-	const handleSubmit = () => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
 		actions.addContact(name, phone, email, address);
+		navigate("/")
 	}
 
 	return (

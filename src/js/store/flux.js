@@ -36,11 +36,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({contacts: [...contact, data]})
 			},
 			getContacts: async() => {
-				let response = await ("https://playground.4geeks.com/apis/fake/contact/agenda/josenoway")
+				let response = await fetch("https://playground.4geeks.com/apis/fake/contact/agenda/josenoway")
 				let data = await response.json()
 				setStore({contacts: data})
 				
-				return contacts
+				return getStore.contacts
 			},
 			updateContact: async(name, phone, email, address, id) => {
 				let response = await fetch("https://playground.4geeks.com/apis/fake/contact/" + id, {

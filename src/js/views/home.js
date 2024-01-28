@@ -1,10 +1,11 @@
-import React, {useContext} from "react";
+import React, {useContext , useEffect} from "react";
 import { Context } from "../store/appContext";
 import ContactCard from "../component/contactCard";
 import "../../styles/home.css";
 
 export const Home = () => {
-
+	const {store, actions} = useContext(Context)
+	
 	useEffect(() => {
 		async function getContacts(){
 			await actions.getContacts()

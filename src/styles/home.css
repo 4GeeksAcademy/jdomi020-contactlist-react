@@ -1,0 +1,16 @@
+.contactcard {
+    border: 2px solid black;
+    margin: 25px;
+    text-align: left;
+}
+
+.contactcard h1 {
+    font-size: 20px;
+    margin-left: 10px;
+    text-decoration: underline;
+}
+
+.contactcard h2 {
+    font-size: 18px;
+    margin-left: 25px;
+}

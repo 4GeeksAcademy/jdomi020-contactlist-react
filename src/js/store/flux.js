@@ -20,17 +20,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			addContact: async(name, phone, email, address) => {
+				console.log(name, phone, email, address)
 				let response = await fetch("https://playground.4geeks.com/apis/fake/contact/", {
 					method: "POST",
 					headers: { "Content-type": "application/json" },
-					body:
-					{
+					body: JSON.stringify(
+						{
 						"full_name": name,
 						"email": email,
 						"agenda_slug": "josenoway",
 						"address": address,
 						"phone": phone
-					}
+					})
 				})
 				let data = await response.json()
 				setStore({contacts: [...contact, data]})

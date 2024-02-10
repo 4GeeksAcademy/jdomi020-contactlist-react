@@ -16,7 +16,7 @@ export const AddContact = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		actions.addContact(name, phone, email, address);
+		actions.addContact(name, phone.toString(), email, address);
 		navigate("/")
 	}
 
